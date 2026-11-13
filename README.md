@@ -1,6 +1,6 @@
 # Split Image to Tiles
 
-Purpose: An ImageJ2 / Fiji plugin that splits the current image, stack or hyperstack
+- Purpose: An ImageJ2 / Fiji plugin that splits the current image, stack or hyperstack
 (or a sub-region of it) into a grid of tiles, with optional overlap for
 de-stitching. Every tile keeps all channels, Z-slices and time points.
 
@@ -65,4 +65,4 @@ The plugin jar is written to `target/split-image-to-tiles-<version>.jar`.
 BSD 2-Clause; see [LICENSE.txt](LICENSE.txt).
 
 ## Notes
-The developer claims no ownership or credit for any dependencies. This plugin is provided free and as-is and the end-user accepts full responsibility for its use. No warranty is provided.
+The developer claims no ownership or credit for any dependencies. This plugin is provided free and as-is and the end-user accepts full responsibility for its use. No warranty is provided. See licence.txt for more information.
