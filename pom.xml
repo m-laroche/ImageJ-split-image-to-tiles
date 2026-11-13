@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>45.1.0</version>
+		<relativePath />
+	</parent>
+
+	<groupId>io.github.m-laroche</groupId>
+	<artifactId>ImageJ-split-image-to-tiles</artifactId>
+	<version>0.8</version>
+
+	<name>ImageJ Split Image to Tiles (Destitcher)</name>
+	<description>Split an image, stack or hyperstack (or a sub-region of it) into a grid of tiles, with optional overlap for de-stitching.</description>
+	<url>https://github.com/m-laroche/ImageJ-split-image-to-tiles</url>
+	<inceptionYear>2026</inceptionYear>
+	<organization>
+		<name>University of Sydney Faculty of Medicine and Health - David Richmond Laboratory</name>
+		<url>https://www.sydney.edu.au/</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>Simplified BSD License</name>
+			<url>https://opensource.org/licenses/BSD-2-Clause</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>m-laroche</id>
+			<name>Michael La Roche</name>
+			<roles>
+				<role>founder</role>
+				<role>lead</role>
+				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>None</name>
+		</contributor>
+	</contributors>
+
+	<mailingLists>
+		<mailingList>
+			<name>Image.sc Forum</name>
+			<archive>https://forum.image.sc/</archive>
+		</mailingList>
+	</mailingLists>
+
+	<scm>
+		<connection>scm:git:https://github.com/m-laroche/ImageJ-split-image-to-tiles</connection>
+		<developerConnection>scm:git:git@github.com:m-laroche/ImageJ-split-image-to-tiles</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/m-laroche/ImageJ-split-image-to-tiles</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/m-laroche/ImageJ-split-image-to-tiles/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>GitHub Actions</system>
+		<url>https://github.com/m-laroche/ImageJ-split-image-to-tiles/actions</url>
+	</ciManagement>
+
+	<properties>
+		<package-name>SplitImageToTiles</package-name>
+		<!-- Target Java 8 so the plugin also runs in older Fiji installations -->
+		<scijava.jvm.version>8</scijava.jvm.version>
+		<license.licenseName>bsd_2</license.licenseName>
+		<license.copyrightOwners>Michael La Roche</license.copyrightOwners>
+	</properties>
+
+	<dependencies>
+		<!-- ImageJ 1.x API (IJ.run, GenericDialog, Duplicator, ...) -->
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>ij</artifactId>
+		</dependency>
+		<!-- SciJava @Plugin / Command (ImageJ2 plugin framework) -->
+		<dependency>
+			<groupId>org.scijava</groupId>
+			<artifactId>scijava-common</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
