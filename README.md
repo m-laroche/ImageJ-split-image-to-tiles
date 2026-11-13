@@ -33,8 +33,8 @@ Requires a Fiji running Java 8 or newer (any current Fiji).
 ## Usage
 
 1. Open an image.
-2. Run **Plugins ▸ Richmond Lab ▸ Split Image to Tiles**.
-3. Set the units, region, tiling mode, overlap and tile prefix.
+2. Run **Plugins ▸ Split Image to Tiles (de-stitcher)**.
+3. Set the units (px/um), bounding region, tiling mode, tile overlap and tile prefix.
 4. Click 'Ok'. Check the overlay preview, then choose **Proceed**, **Adjust** or **Cancel**.
 
 Tiles are named `<prefix>_r<row>_c<column>`, e.g. `Tile_r01_c03`.
