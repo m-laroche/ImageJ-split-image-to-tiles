@@ -14,9 +14,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "21"
@@ -28,7 +28,7 @@ jobs:
       - name: Collect plugin jar (not the -sources / -tests jars)
         run: |
           mkdir dist
-          cp $(ls target/split-image-to-tiles-*.jar | grep -v -e '-sources' -e '-tests') dist/
+          cp $(ls target/*.jar | grep -v -e '-sources' -e '-tests') dist/
 
       - name: Upload jar (every build)
         uses: actions/upload-artifact@v4
