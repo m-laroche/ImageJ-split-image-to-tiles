@@ -12,7 +12,7 @@
 	</parent>
 
 	<groupId>io.github.m-laroche</groupId>
-	<artifactId>Split_Image_to_Tiles-${project.version}</artifactId>
+	<artifactId>Split_Image_to_Tiles</artifactId>
 	<version>0.8.1</version>
 
 	<name>ImageJ Split Image to Tiles (Destitcher)</name>
