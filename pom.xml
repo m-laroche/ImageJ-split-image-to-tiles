@@ -13,7 +13,7 @@
 
 	<groupId>io.github.m-laroche</groupId>
 	<artifactId>ImageJ-split-image-to-tiles</artifactId>
-	<version>0.8</version>
+	<version>0.8.1</version>
 
 	<name>ImageJ Split Image to Tiles (Destitcher)</name>
 	<description>Split an image, stack or hyperstack (or a sub-region of it) into a grid of tiles, with optional overlap for de-stitching.</description>
