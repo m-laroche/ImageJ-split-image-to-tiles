@@ -26,14 +26,17 @@ jobs:
         run: mvn -B verify
 
       - name: Collect plugin jar (not the -sources / -tests jars)
+        id: jar
         run: |
           mkdir dist
           cp $(ls target/*.jar | grep -v -e '-sources' -e '-tests') dist/
+          jar=$(ls dist/*.jar)
+          echo "name=$(basename "$jar" .jar)" >> "$GITHUB_OUTPUT"
 
       - name: Upload jar (every build)
         uses: actions/upload-artifact@v4
         with:
-          name: Split_Image_to_tiles-${project.version}-jar
+          name: ${{ steps.jar.outputs.name }}-jar
           path: dist/*.jar
 
       - name: Publish GitHub Release (tags only)
