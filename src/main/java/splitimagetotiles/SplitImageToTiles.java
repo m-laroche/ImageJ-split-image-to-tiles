@@ -47,10 +47,10 @@ import ij.plugin.Duplicator;
  * @author Michael La Roche, University of Sydney, David Richmond Laboratory
  */
 @Plugin(type = Command.class,
-	menuPath = "Plugins>Split Image to tiles (de-stitcher)")
+	menuPath = "Plugins>Split Image to Tiles (destitcher)")
 public class SplitImageToTiles implements Command {
 
-	private static final String TITLE = "Split image to tiles (de-stitcher)";
+	private static final String TITLE = "SplitImageToTiles";
 	private static final String SEP = "----------------------------------------";
 	private static final Font HEADING = new Font("SansSerif", Font.PLAIN, 15);
 	private static final String MU = "µ"; // micro sign
@@ -122,22 +122,27 @@ public class SplitImageToTiles implements Command {
 		String action = "Adjust";
 		while (action.equals("Adjust")) {
 
-			// ---- 2-4. Parameters ----------------------------------------------
+			// ---- Information -----
 			final GenericDialog gd = new GenericDialog(TITLE);
-			gd.addMessage("Version " + version());
+			gd.addMessage("Split Image to Tiles. Version " + version());
 			gd.addMessage(SEP);
 			gd.addMessage("Image information", HEADING);
 			gd.addMessage(info);
 			gd.addMessage(SEP);
+			
+			// ---- Select units and reference ----
 			gd.addChoice("Units", UNIT_CHOICES, units);
 			gd.addChoice("Reference", REF_CHOICES, ref);
 			gd.addMessage(SEP);
+			
+			//---- Bounding and offset parameters ----
 			gd.addMessage("Bounding region (all 0 = whole image)", HEADING);
 			gd.addNumericField("X offset", regX, 2, 8, "");
 			gd.addNumericField("Y offset", regY, 2, 8, "");
 			gd.addNumericField("Region width", regW, 2, 8, "");
 			gd.addNumericField("Region height", regH, 2, 8, "");
-
+			
+			// ---- Tiling parameters ----
 			gd.addMessage(SEP);
 			gd.addMessage("Tiling", HEADING);
 			gd.addChoice("Define tiles by", MODE_CHOICES, defineBy);
@@ -156,6 +161,8 @@ public class SplitImageToTiles implements Command {
 				"(Origin) or is centred in the region (Centre).\n" +
 				"Overlap applies to both modes: horizontal = shared between left/right\n" +
 				"neighbours (% of tile width), vertical = top/bottom (% of tile height).");
+			
+			// ---- Output options ----
 			gd.addMessage(SEP);
 			gd.addStringField("Tile prefix", prefix, 20);
 			gd.addCheckbox("Save tiles to source directory (and close them)",
