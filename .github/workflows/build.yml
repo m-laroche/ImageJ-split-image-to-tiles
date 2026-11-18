@@ -33,7 +33,7 @@ jobs:
       - name: Upload jar (every build)
         uses: actions/upload-artifact@v4
         with:
-          name: split-image-to-tiles-jar
+          name: Split_Image_to_Tiles-jar
           path: dist/*.jar
 
       - name: Publish GitHub Release (tags only)
