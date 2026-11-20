@@ -5,7 +5,7 @@
 de-stitching. Every tile keeps all channels, Z-slices and time points.
 
 - Author: Michael La Roche, University of Sydney Faculty of Medicine and Health, David Richmond Laboratory.
-- Version: 0.8
+- Version: 0.8.1
 - Attribution: Core logic and initial ImageJ macro script by Michael La Roche with additional assistance from Anthropic Claude (2026) for some features and Java conversion for use as an ImageJ plugin.  
 
 ## Features
